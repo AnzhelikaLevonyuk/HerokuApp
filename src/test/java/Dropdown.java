@@ -15,12 +15,12 @@ public class Dropdown extends BaseTest {
         Select select = new Select(dropdown);
 
         select.selectByValue("1");
-        WebElement option1 = driver.findElement(By.xpath("//select[@id='dropdown']/option[@value='1']"));
-        Assert.assertTrue(option1.isSelected(), "Option 1 is selected");
+        WebElement selectedOption = select.getFirstSelectedOption();
+        Assert.assertEquals(selectedOption.getText(), "Option 1", "Option 1 is selected");
 
         select.selectByValue("2");
-        WebElement option2 = driver.findElement(By.xpath("//select[@id='dropdown']/option[@value='2']"));
-        Assert.assertTrue(option2.isSelected(), "Option 2 is selected");
+        selectedOption = select.getFirstSelectedOption();
+        Assert.assertEquals(selectedOption.getText(), "Option 2", "Option 2 is selected");
 
     }
 }
