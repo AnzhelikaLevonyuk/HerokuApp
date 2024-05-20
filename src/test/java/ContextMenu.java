@@ -18,6 +18,7 @@ public class ContextMenu extends BaseTest {
         Assert.assertEquals(alert.getText(), "You selected a context menu");
 
         alert.accept();
+        driver.switchTo().defaultContent();
     }
 }
 

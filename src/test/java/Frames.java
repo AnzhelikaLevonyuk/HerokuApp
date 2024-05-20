@@ -1,5 +1,3 @@
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -15,5 +13,6 @@ public class Frames extends BaseTest {
         driver.switchTo().frame(iframe);
 
         Assert.assertEquals(driver.findElement(By.tagName("p")).getText(), "Your content goes here.");
+        driver.switchTo().defaultContent();
     }
 }
